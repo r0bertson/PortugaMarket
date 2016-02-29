@@ -1,0 +1,65 @@
+th {
+   width: 15%;
+}
+
+table.menu {
+    width: 100%;
+    font-size:15px;
+    font-family: "lucida calligraphy","arial";
+}
+
+a.menuLink:hover {
+    color: gold;
+}
+
+th.selected {
+    background-color: darkred;
+}
+
+a.menuLink {
+    color:white;
+    text-decoration:none;
+}
+
+th.topmenu {
+    background-color: red;
+}
+
+.footer {
+    background-color: darksalmon;
+    font-size: 12px;
+    font-family: "ar essence", "arial"; 
+    width:100%;
+    text-align: center;
+}
+
+.contato{
+    margin-left: 35%;
+    width: 30%;
+    color: #990000;
+    font-weight: bold;
+}
+
+textarea {
+    height:100px;
+}
+
+.form{
+    width:400px;
+    border: 1px solid #990000;
+}
+
+input.botao{
+    background-color: #990000;
+    font-size:12px;
+    font-family: "ar essence","arial";
+    color: White;
+    font-weight: bold;
+    border: 0;
+    border-radius: 7px;
+    height: 22px;
+}
+
+h1{
+    color: #990000;
+  }

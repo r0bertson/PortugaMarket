@@ -1,0 +1,39 @@
+/* 
+    Document   : loginCSS
+    Created on : 06/11/2011, 12:00:00
+    Author     : Bruna
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+body {
+    text-align: center;
+    margin: 0px auto;
+}
+.gradiente {
+    margin:0 auto;
+    height:800px;
+    
+    padding:10px;
+    background: #000 ;/* for non-css3 browsers */
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#350307', EndColorStr='#000000'); /* for IE */	
+    background: -webkit-gradient(linear, left top, right top, from(#350307), to(#000000)); /* for webkit browsers */	
+    background: -moz-linear-gradient(left,  #350307,  #000); /* for firefox 3.6+ */	
+}
+
+    
+.border{
+    border-radius:20px;
+}
+
+.rodape {
+     color: #FFFFFF;
+     font-size: smaller;     
+}
+
+
+
