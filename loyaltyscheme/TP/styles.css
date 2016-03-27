@@ -1,9 +1,10 @@
 #wrapper {
 	width: 955px;
+	margin: 0 auto;
 	/* [disabled]border-right: 1px solid #999; */
 }
-#header {
-	margin: 0px;
+#header {: 0px;
+	margin
 	height: 175px;
 	width: 955px;
 }
@@ -29,7 +30,6 @@
 	background-color: #FFF;
 	width: 955px;
 	border-right: 1px #999 solid;
-	
 }
 #main a {
 	font-family: Tahoma, Geneva, sans-serif;
@@ -41,6 +41,7 @@
 #left {
 	padding: 10px;
 	width: 600px;
+	padding-bottom:100px;
 }
 
 #right {
@@ -52,6 +53,9 @@
 #footer {
 	height: 30px;
 	width: 955px;
+	position: absolute;
+	bottom: -124px;
+	left: 4px;
 }
 body {
 	margin: 0px;
