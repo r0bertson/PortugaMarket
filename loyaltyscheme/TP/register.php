@@ -31,14 +31,35 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
+// *** Redirect if username exists
+$MM_flag="MM_insert";
+if (isset($_POST[$MM_flag])) {
+  $MM_dupKeyRedirect="registerFailed.php";
+  $loginUsername = $_POST['email'];
+  $LoginRS__query = sprintf("SELECT email FROM clients WHERE email=%s", GetSQLValueString($loginUsername, "text"));
+  mysql_select_db($database_conn_clients, $conn_clients);
+  $LoginRS=mysql_query($LoginRS__query, $conn_clients) or die(mysql_error());
+  $loginFoundUser = mysql_num_rows($LoginRS);
+
+  //if there is a row in the database, the username was found - can not add the requested username
+  if($loginFoundUser){
+    $MM_qsChar = "?";
+    //append the username to the redirect page
+    if (substr_count($MM_dupKeyRedirect,"?") >=1) $MM_qsChar = "&";
+    $MM_dupKeyRedirect = $MM_dupKeyRedirect . $MM_qsChar ."requsername=".$loginUsername;
+    header ("Location: $MM_dupKeyRedirect");
+    exit;
+  }
+}
+
 // *** Redirect if username exists (in our case, the email)
 $MM_flag="MM_insert";
 if (isset($_POST[$MM_flag])) {
   $MM_dupKeyRedirect="registerFailed.php";
   $loginUsername = $_POST['email'];
   $LoginRS__query = sprintf("SELECT email FROM clients WHERE email=%s", GetSQLValueString($loginUsername, "text"));
-  mysql_select_db($database_conn_login, $conn_login);
-  $LoginRS=mysql_query($LoginRS__query, $conn_login) or die(mysql_error());
+  mysql_select_db($database_conn_clients, $conn_clients);
+  $LoginRS=mysql_query($LoginRS__query, $conn_clients) or die(mysql_error());
   $loginFoundUser = mysql_num_rows($LoginRS);
 
   //if there is a row in the database, the username was found - can not add the requested username
@@ -58,14 +79,14 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO clients (ID, email, pwd, firstname, lastname) VALUES (%s, %s, %s, %s, %s, %s)",
-                       GetSQLValueString($_POST['email'], "text"),
+  $insertSQL = sprintf("INSERT INTO clients (pwd, email, firstname, lastname) VALUES (%s, %s, %s, %s)",
                        GetSQLValueString($_POST['pwd'], "text"),
+                       GetSQLValueString($_POST['email'], "text"),
                        GetSQLValueString($_POST['firstname'], "text"),
                        GetSQLValueString($_POST['lastname'], "text"));
 
-  mysql_select_db($database_conn_login, $conn_login);
-  $Result1 = mysql_query($insertSQL, $conn_login) or die(mysql_error());
+  mysql_select_db($database_conn_clients, $conn_clients);
+  $Result1 = mysql_query($insertSQL, $conn_clients) or die(mysql_error());
 
   $insertGoTo = "login.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -84,8 +105,10 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 </head>
 
 <body>
+
+<div id ="wrapper">
 <?php include('header.php'); ?>
-<div id="main">
+      <div id="main">
   <div id="left">
       <h1>Registration Form</h1>
       <fieldset>
@@ -113,6 +136,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
           <input type="hidden" name="MM_insert" value="form1" />
         </form>
       </fieldset>
+    </div>
     </div>
   <?php include('footer.php'); ?>
 </div>

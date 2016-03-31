@@ -37,6 +37,13 @@ CREATE TABLE IF NOT EXISTS `clients` (
 -- Inserting initial data for table `clients`
 --
 
+CREATE TABLE IF NOT EXISTS `history` (
+  `ID` INT(8)  NOT NULL PRIMARY KEY,
+  `date` date NOT NULL,
+  `points` varchar(40) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
 INSERT INTO `clients` (`ID`, `email`, `pwd`, `firstname`, `lastname`) VALUES
 (NULL, 'kingarthur@uwl.ac.uk', 'england', 'king', 'arthur'),
 (NULL, 'adele@uwl.ac.uk', 'hello', 'the', 'adele');

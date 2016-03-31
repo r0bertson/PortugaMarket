@@ -76,21 +76,21 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-$colname_qClient = "-1";
+$colname_qPoints = "-1";
 if (isset($_SESSION['MM_Username'])) {
-  $colname_qClient = $_SESSION['MM_Username'];
+  $colname_qPoints = $_SESSION['MM_Username'];
 }
 mysql_select_db($database_conn_clients, $conn_clients);
-$query_qClient = sprintf("SELECT * FROM clients WHERE email = %s", GetSQLValueString($colname_qClient, "text"));
-$qClient = mysql_query($query_qClient, $conn_clients) or die(mysql_error());
-$row_qClient = mysql_fetch_assoc($qClient);
-$totalRows_qClient = mysql_num_rows($qClient);
+$query_qPoints = sprintf("SELECT * FROM clients WHERE email = %s", GetSQLValueString($colname_qPoints, "text"));
+$qPoints = mysql_query($query_qPoints, $conn_clients) or die(mysql_error());
+$row_qPoints = mysql_fetch_assoc($qPoints);
+$totalRows_qPoints = mysql_num_rows($qPoints);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Client Area - UWL LOYALTY SCHEME WEBSITE</title>
+<title>Balance - UWL LOYALTY SCHEME WEBSITE</title>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -99,12 +99,8 @@ $totalRows_qClient = mysql_num_rows($qClient);
   <?php include('header.php'); ?>
   <div id="main">
     <div id="left">
-      <h1>Hello <?php echo $row_qClient['lastname']; ?>, welcome to the UWL Loyalty Scheme clients area</h1>
-      <p>Thank you for becoming one of our loyal clients. In this area, you can check how many Loyalty Points you have.</p>
-      <p>You can also verify, the amount of points you earned at your past purchases in Portuga Market.</p>
-      <p>Be sure to visit your <a href="balance.php">balance</a> page to view your loyalty points. </p>
-      <p>For more information about scheme, please contact us. You can find our contact information at <a href="contactUs.php">contact us</a> page.</p>
-      <p>&nbsp;</p>
+      <h1>Your balance</h1>
+      <p>You have <?php echo $row_qPoints['points']; ?> Loyalty Points.</p>
     </div>
   </div>
   <?php include('footer.php'); ?>
@@ -112,5 +108,5 @@ $totalRows_qClient = mysql_num_rows($qClient);
 </body>
 </html>
 <?php
-mysql_free_result($qClient);
+mysql_free_result($qPoints);
 ?>

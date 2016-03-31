@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>UWL LOYALTY SCHEME</title>
+<title>Home - UWL LOYALTY SCHEME</title>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 

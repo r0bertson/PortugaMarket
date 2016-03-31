@@ -1,19 +1,24 @@
-#wrapper {
-	width: 955px;
+*{
 	margin: 0 auto;
-	/* [disabled]border-right: 1px solid #999; */
 }
-#header {: 0px;
-	margin
-	height: 175px;
-	width: 955px;
+#wrapper {
+	text-align:center;
+	margin:0 auto;
+
+    height:100%;
+	
+}
+#header {: 
+	padding:0px;
+	margin: 0 auto;
+	text-align: center;
 }
 #navbar {
 	height: 30px;
 	width: 955px;
 	padding-top: 5px;
-	/* [disabled]background-image: url(images/nav-scuba2u.jpg); */
 	background-color: #7C9194;
+	 /*text-align: center;*/
 }
 #navbar a {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -30,6 +35,7 @@
 	background-color: #FFF;
 	width: 955px;
 	border-right: 1px #999 solid;
+	
 }
 #main a {
 	font-family: Tahoma, Geneva, sans-serif;
@@ -39,9 +45,10 @@
 
 
 #left {
-	padding: 10px;
-	width: 600px;
-	padding-bottom:100px;
+	padding:10px;
+    padding-bottom:30px;
+	text-align: left;
+	height: 400px;
 }
 
 #right {
@@ -51,20 +58,23 @@
 }
 
 #footer {
-	height: 30px;
-	width: 955px;
-	position: absolute;
-	bottom: -124px;
-	left: 4px;
+    bottom:0;
+    width:100%;
+	margin: auto;
+	
 }
 body {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 10px;
 	background-color: #CCC;
+	padding-bottom: 30px;
+	text-align: center;
 }
+
+
 h1 {
 	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 1.2em;
+	font-size: 1.6em;
 	color: #333;
 }
 h2 {
