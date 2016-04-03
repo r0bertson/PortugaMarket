@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php require_once('Connections/conn_clients.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
