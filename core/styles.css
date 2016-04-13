@@ -21,14 +21,15 @@
 	
 }
 #navbar ul li {
-	background-color: #666;
+	background-color: #473C8B;
 	float: left;
 	border: 1px solid #CCC;
 	position: relative;
 	list-style-type: none;
 }
 #navbar ul li a:hover {
-	color: #0FF;
+	color: #FFFFFF;
+	text-decoration: underline;
 }
 
 #navbar ul li a {
@@ -48,14 +49,14 @@
 	top: 31px;
 }
 #navbar ul li ul li a:hover {
-	background-color: #069;
+	background-color: #473C8B;
 }
 
 #navbar ul li:hover ul {
 	visibility: visible;
 }
 #navbar ul li:hover {
-	background-color: #333;
+	background-color: #473C8B;
 }
 #header {
 
