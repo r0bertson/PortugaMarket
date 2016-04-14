@@ -1,16 +1,16 @@
 <?php
-$Nome		= $_POST["Nome"];	// Pega o valor do campo Nome
-$Fone		= $_POST["Fone"];	// Pega o valor do campo Telefone
+/* $Name		= $_POST["Nome"];	// Pega o valor do campo Nome
+$Description		= $_POST["Fone"];	// Pega o valor do campo Telefone
 $EmailSupplier		= $_POST["Email"];	// Pega o valor do campo Email
 $Mensagem	= $_POST["Mensagem"];	// Pega os valores do campo Mensagem
 
-// Variável que junta os valores acima e monta o corpo do email
+//Pegar o email e descricao e do banco de dados e salvar em EmailSupplier
 
-$Text 		= "Nome: $Nome\n\nE-mail: $Email\n\nTelefone: $Fone\n\nMensagem: $Mensagem\n";
+$Text 		= "We need 20 of the: $Name - $Description\n";*/
 
 require_once("phpmailer/class.phpmailer.php");
 
-define('GUSER', 'portugamarket@gmail.com');	// <-- Insira aqui o seu GMail
+define('GUSER', 'portugamarke@gmail.com');	// <-- Insira aqui o seu GMail
 define('GPWD', 'portuga123');		// <-- Insira aqui a senha do seu GMail
 
 function smtpmailer($to, $from, $from_name, $subject, $body) { 
@@ -39,10 +39,12 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
 
 // Insira abaixo o email que irá receber a mensagem, o email que irá enviar (o mesmo da variável GUSER), 
 //o nome do email que envia a mensagem, o Assunto da mensagem e por último a variável com o corpo do email.
-
- if (smtpmailer($EmailSupplier, GUSER, 'Portuga Market', 'Suppliy', $Text)) {
+/*
+ if (smtpmailer($EmailSupplier, GUSER, 'Portuga Market', 'Supply', $Text)) {
 
 	Header("location:http://www.dominio.com.br/obrigado.html"); // Mensagem de acerto?
 }
 if (!empty($error)) echo $error;
+*/
+
 ?>
