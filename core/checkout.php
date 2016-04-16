@@ -131,7 +131,7 @@ if($row_result['loyalnumber'] !=''){
 ?>
 
 <!-- 
-16/04 - the following code will udpate the payment database
+16/04 filipe - the following code will udpate the payment database
 
 -->
 <?php 
@@ -141,22 +141,41 @@ $amount = $_SESSION['newTotal'];
 if(isset($_SESSION['cardNumber'])){
 	$card = $_SESSION['cardNumber'];	
 	$query = "UPDATE payment_db.creditCard SET credit_available = credit_available - '$amount' WHERE cardNumber='$card'";
+
+//Update the stock
+	$i = 0; 
+	foreach ($_SESSION["cart_storage"] as $each_item) { 
+		$product_id = $each_item['product_id'];
+		$sold_quantity = $each_item['quantity'];
+		$query2 = "UPDATE core_db.products SET quantity = quantity - '$sold_quantity' WHERE ID = '$product_id'";
+		}
+//Empty the cart
+    unset($_SESSION['cart_storage']); 
+	
 	$result = mysql_query($query, $conn_payment) or die(mysql_error());
 }
+
 //Update the paypal account balance.
 else{
      $ppal = $_SESSION['email'];
 	 $pwdpal = $_SESSION['pp_pwd'];
 	 $query = "UPDATE payment_db.payPal SET pp_credit = pp_credit - '$amount' WHERE (email= '$ppal' AND pw_pwd='$pwdpal')"; 
+	 
+	 //Update the stock
+	$i = 0; 
+	foreach ($_SESSION["cart_storage"] as $each_item) { 
+		$product_id = $each_item['product_id'];
+		$sold_quantity = $each_item['quantity'];
+		$query2 = "UPDATE core_db.products SET quantity = quantity - '$sold_quantity' WHERE ID = '$product_id'";
+		}
+//Empty the cart
+    unset($_SESSION['cart_storage']); 
+	 
 	 $result = mysql_query($query, $conn_payment) or die(mysql_error());
-	
 }
 
 ?>
-  <!-- TODO 
-        2 - UPDATE STOCK
-        3 - UPDATE CREDIT CARD LIMIT
-    -->
+   
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
