@@ -51,7 +51,7 @@ if(isset($_POST['submit']) && isset($_POST['email'])) {
 	$email = $_POST['email'];
 	$pwd = $_POST['pwd'];
 	mysql_select_db($database_conn_payment, $conn_payment);
-	$query_q_payment = "SELECT * FROM paypal WHERE email='$email' AND pwd='$pwd'";
+	$query_q_payment = "SELECT * FROM paypal WHERE email='$email' AND pp_pwd='$pwd'";
 	$q_payment = mysql_query($query_q_payment, $conn_payment) or die(mysql_error());
 	$row_q_payment = mysql_fetch_assoc($q_payment);
 	$totalRows_q_payment = mysql_num_rows($q_payment);
