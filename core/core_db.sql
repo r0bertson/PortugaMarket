@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.5.2
 -- http://www.phpmyadmin.net
 --
@@ -66,45 +66,7 @@ INSERT INTO `clients` (`ID`, `pwd`, `email`, `firstname`, `lastname`) VALUES
 (1, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
 (2, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
 (3, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(4, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(5, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(6, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(7, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(8, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(9, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(10, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(11, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(12, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(13, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(14, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(15, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(16, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(17, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(18, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(19, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(20, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(21, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(22, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(23, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(24, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(25, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(26, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(27, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(28, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(29, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(30, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(31, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(32, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(33, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(34, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(35, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(36, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(37, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(38, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(39, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones'),
-(40, '123', 'arthur@uwl.ac.uk', 'arthur', 'smith'),
-(41, '123', 'john@uwl.ac.uk', 'john', 'lewis'),
-(42, '123', 'ellie@uwl.ac.uk', 'ellie', 'jones');
+
 
 -- --------------------------------------------------------
 

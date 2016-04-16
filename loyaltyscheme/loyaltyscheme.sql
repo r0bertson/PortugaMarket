@@ -1,19 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.4
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Mar 15, 2011 at 01:00 PM
--- Server version: 5.1.41
--- PHP Version: 5.3.1
+-- Host: 127.0.0.1
+-- Generation Time: 16-Abr-2016 às 16:27
+-- Versão do servidor: 5.7.9
+-- PHP Version: 5.6.16
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `loyaltyscheme`
@@ -22,74 +23,48 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clients`
+-- Estrutura da tabela `clients`
 --
 
+DROP TABLE IF EXISTS `clients`;
 CREATE TABLE IF NOT EXISTS `clients` (
-  `ID` INT(8) ZEROFILL NOT NULL PRIMARY KEY auto_increment,
+  `ID` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `pwd` varchar(15) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `firstname` VARCHAR(40) NOT NULL,
-  `lastname` VARCHAR(11) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `firstname` varchar(40) NOT NULL,
+  `lastname` varchar(40) NOT NULL,
+  `pontos` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `clients`
+--
 
+INSERT INTO `clients` (`ID`, `pwd`, `email`, `firstname`, `lastname`, `pontos`) VALUES
+(00000001, 'england', 'kingarthur@uwl.ac.uk', 'king', 'arthur', 0),
+(00000002, 'hello', 'adele@uwl.ac.uk', 'the', 'adele', 125),
+(00000003, '123', 'paul@john.com', 'Paul', 'John', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `history`
+--
+
+DROP TABLE IF EXISTS `history`;
 CREATE TABLE IF NOT EXISTS `history` (
-  `ID` INT(8)  NOT NULL PRIMARY KEY,
-  `date` date NOT NULL,
-  `points` varchar(40) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- 
--- Table structure for table `creditCard`
---
-CREATE TABLE IF NOT EXISTS `creditCard` (
-  `ID` INT(8) ZEROFILL NOT NULL PRIMARY KEY auto_increment,
-  `cardNumber` INT(16) NOT NULL,
-  `confCode` INT (3) NOT NULL,
-  `monthvalid` INT(2) NOT NULL,
-  `yearvalid` INT (4) NOT NULL,
-  `pwd` varchar(15) NOT NULL,
-  `firstname` VARCHAR(40) NOT NULL,
-  `lastname` VARCHAR(11) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+  `ID` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `points` int(11) NOT NULL,
+  `date` varchar(30) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Table structure for table `payPal`
+-- Extraindo dados da tabela `history`
 --
-CREATE TABLE IF NOT EXISTS `payPal` (
-  `ID` INT(8) ZEROFILL NOT NULL PRIMARY KEY auto_increment,
-  `email` varchar(40) NOT NULL,
-  `pwd` varchar(15) NOT NULL,
-  `firstname` VARCHAR(40) NOT NULL,
-  `lastname` VARCHAR(11) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Inserting initial data for table `clients`
---
-INSERT INTO `clients` (`ID`, `email`, `pwd`, `firstname`, `lastname`) VALUES
-(NULL, 'kingarthur@uwl.ac.uk', 'england', 'king', 'arthur'),
-(NULL, 'adele@uwl.ac.uk', 'hello', 'the', 'adele');
-
---
--- Inserting initial data for table `creditCard`
---
-INSERT INTO `creditCard` (`ID`, `cardNumber`, `confCode`, `monthvalid`, `yearvalid`, `pwd`, `firstname` , `lastname`) VALUES
-(NULL, '4004982711226988', '882', '01', '2018', 'england', 'king', 'arthur'),
-(NULL, '7229982715677261', '121', '10', '2020', 'hello', 'the', 'adele');
-
---
--- Inserting initial data for table `payPal`
---
-INSERT INTO `payPal` (`ID`, `email`, `pwd`, `firstname`, `lastname`) VALUES
-(NULL, 'kingarthur@uwl.ac.uk', 'england', 'king', 'arthur'),
-(NULL, 'adele@uwl.ac.uk', 'hello', 'the', 'adele');
-
-
-
-
+INSERT INTO `history` (`ID`, `points`, `date`) VALUES
+(00000002, 20, '04.16.16');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
