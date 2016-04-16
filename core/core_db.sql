@@ -230,6 +230,8 @@ CREATE TABLE IF NOT EXISTS `payPal` (
   `firstname` VARCHAR(40) NOT NULL,
   `lastname` VARCHAR(11) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+INSERT INTO `paypal` (`ID`, `email`, `pwd`, `firstname` , `lastname`) VALUES
 (NULL, 'kingarthur@uwl.ac.uk', 'england', 'king', 'arthur'),
 (NULL, 'adele@uwl.ac.uk', 'hello', 'the', 'adele');
 
