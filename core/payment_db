@@ -33,7 +33,7 @@ DROP TABLE IF EXISTS `payPal`;
 CREATE TABLE IF NOT EXISTS `payPal` (
   `ID` INT(8) ZEROFILL NOT NULL PRIMARY KEY auto_increment,
   `email` varchar(40) NOT NULL,
-  `pwd` varchar(15) NOT NULL,
+  `pp_pwd` varchar(15) NOT NULL,
   `pp_credit` INT (5) NOT NULL,
   `firstname` VARCHAR(40) NOT NULL,
   `lastname` VARCHAR(11) NOT NULL
