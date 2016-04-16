@@ -21,16 +21,24 @@ if (isset($_GET['id'])) {
 		// get all the product details
 		while($row = mysql_fetch_array($result)){ 
 			if( $row["quantity"] < 5){
+			 $id= $row["ID"];
+			 $name = $row["name"];
+			 $price = $row["price"];
+			 $description = $row["description"];
+			 $nationality = $row["nationality"];
+			 $category = $row["category"];
+			 $weight = $row["weight"];
+			 $emailSupplier = $row["emailSupplier"];
 				//if has less than 5, adds the product in the table supplier
-				$query2 = "INSERT INTO `supplier` VALUES( '$row[`ID`]', '$row[`name`]' , '$row[`description`]' , '$row[`weight`]' , '$row[`quantity`]' , 
-					'$row[`specialoffer`]' , '$row[`nationality`]' , '$row[`category`]',  '$row[`emailSuplier`]' ");
+				$query2 = "INSERT INTO `supplier` VALUES('$id', '$name', '$price', '$description', '$nationality', '$category', '$weight', '$emailSupplier' )";
+					//'$row['name']' , '$row['description']' , '$row['weight']' , '$row['quantity']' , '$row['specialoffer']' , '$row['nationality']' , '$row['category']',  '$row['emailSuplier']' ");
 				
 				$result2 = mysql_query($query, $conn_core_clients) or die(mysql_error());
 
 			//Send an email to supplier
 				//Pegar o email e descricao e do banco de dados e salvar em EmailSupplier
 
-				$Text 		= "We need 20 of the: " + $row[`name`] + " - "+ $row[`description`] +"'\n";
+				$Text 		= "We need 20 of the: `$name`- `$description`  \n";
 
 	/*			function smtpmailer($to, $from, $from_name, $subject, $body) { 
 					global $error;
@@ -67,7 +75,7 @@ if (isset($_GET['id'])) {
 
 
 				//Adds 20 in the quantity in the table products
-				$query2 = "UPDATE `products` SET quantity = ('$row[`quantity`]'+20) WHERE `id` = '$row[`ID`]' " );
+				$query2 = "UPDATE `products` SET quantity = (`$quantity`+20) WHERE id = `$id` " ;
 
 				$result = mysql_query($query, $conn_core_clients) or die(mysql_error());
 

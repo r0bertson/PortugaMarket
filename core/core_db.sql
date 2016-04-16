@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `specialoffer` int(5) NOT NULL,
   `nationality` int(1) NOT NULL,
   `category` int(1) NOT NULL,
-  `emailSuplier` varchar(20) NOT NULL,
+  `emailSupplier` varchar(20) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- Extraindo dados da tabela `products`
 --
 
-INSERT INTO `products` (`ID`, `name`, `description`, `weight`, `quantity`, `specialoffer`, `nationality`, `category`) VALUES
+INSERT INTO `products` (`ID`, `name`, `description`, `weight`, `quantity`, `specialoffer`, `nationality`, `category`, `emailSupplier`) VALUES
 (000001, 'Bananas', 'Six bananas from Brazil', '500g', 20, 0, 0, 0, 'bananas@gmail.com'),
 (000002, 'Papaya', 'one papaya from Brazil', '150g', 20, 0, 0, 0, 'papaya@gmail.com'),
 (000003, 'Açai cream', 'delicious healthy ice cream made of açai, a fruit only cultivated in amazonia forest', '1L', 20, 0, 0, 0, 'acaicream@gmail.com'),
@@ -196,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `supplier` (
   `specialoffer` int(5) NOT NULL,
   `nationality` int(1) NOT NULL,
   `category` int(1) NOT NULL,
-  `emailSuplier` varchar(20) NOT NULL,
+  `emailSupplier` varchar(20) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
