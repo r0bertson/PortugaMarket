@@ -37,8 +37,8 @@ if (isset($_POST[$MM_flag])) {
   $MM_dupKeyRedirect="registerFailed.php";
   $loginUsername = $_POST['email'];
   $LoginRS__query = sprintf("SELECT email FROM clients WHERE email=%s", GetSQLValueString($loginUsername, "text"));
-  mysql_select_db($database_conn_clients, $conn_clients);
-  $LoginRS=mysql_query($LoginRS__query, $conn_clients) or die(mysql_error());
+  mysql_select_db($database_conn_core_clients, $conn_core_clients);
+  $LoginRS=mysql_query($LoginRS__query, $conn_core_clients) or die(mysql_error());
   $loginFoundUser = mysql_num_rows($LoginRS);
 
   //if there is a row in the database, the username was found - can not add the requested username
@@ -58,8 +58,8 @@ if (isset($_POST[$MM_flag])) {
   $MM_dupKeyRedirect="registerFailed.php";
   $loginUsername = $_POST['email'];
   $LoginRS__query = sprintf("SELECT email FROM clients WHERE email=%s", GetSQLValueString($loginUsername, "text"));
-  mysql_select_db($database_conn_clients, $conn_clients);
-  $LoginRS=mysql_query($LoginRS__query, $conn_clients) or die(mysql_error());
+  mysql_select_db($database_conn_core_clients, $conn_core_clients);
+  $LoginRS=mysql_query($LoginRS__query, $conn_core_clients) or die(mysql_error());
   $loginFoundUser = mysql_num_rows($LoginRS);
 
   //if there is a row in the database, the username was found - can not add the requested username
@@ -79,14 +79,14 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO clients (pwd, email, firstname, lastname) VALUES (%s, %s, %s, %s)",
+  $insertSQL = sprintf("INSERT INTO clients (pwd, email, firstname, lastname,loyalnumber) VALUES (%s, %s, %s, %s, '')",
                        GetSQLValueString($_POST['pwd'], "text"),
                        GetSQLValueString($_POST['email'], "text"),
                        GetSQLValueString($_POST['firstname'], "text"),
                        GetSQLValueString($_POST['lastname'], "text"));
 
-  mysql_select_db($database_conn_clients, $conn_clients);
-  $Result1 = mysql_query($insertSQL, $conn_clients) or die(mysql_error());
+  mysql_select_db($database_conn_core_clients, $conn_core_clients);
+  $Result1 = mysql_query($insertSQL, $conn_core_clients) or die(mysql_error());
 
   $insertGoTo = "login.php";
   if (isset($_SERVER['QUERY_STRING'])) {
