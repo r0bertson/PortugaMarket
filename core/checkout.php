@@ -136,13 +136,20 @@ if($row_result['loyalnumber'] !=''){
 -->
 <?php 
 $amount = $_SESSION['newTotal'];
+
+//Update the credit card limit.
 if(isset($_SESSION['cardNumber'])){
 	$card = $_SESSION['cardNumber'];	
-	$query = "UPDATE payment_db.creditcard SET credit_available = credit_available - '$amount' WHERE cardNumber='$card'";
+	$query = "UPDATE payment_db.creditCard SET credit_available = credit_available - '$amount' WHERE cardNumber='$card'";
 	$result = mysql_query($query, $conn_payment) or die(mysql_error());
 }
+//Update the paypal account balance.
 else{
-	//do the paypal processing
+     $ppal = $_SESSION['email'];
+	 $pwdpal = $_SESSION['pp_pwd'];
+	 $query = "UPDATE payment_db.payPal SET pp_credit = pp_credit - '$amount' WHERE email= '$ppal' AND pw_pwd='$pwdpal'"; 
+	 $result = mysql_query($query, $conn_payment) or die(mysql_error());
+	
 }
 
 ?>
