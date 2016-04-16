@@ -200,6 +200,41 @@ CREATE TABLE IF NOT EXISTS `supplier` (
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
+-- 
+-- Estrutura da tabela `creditCard`
+--
+DROP TABLE IF EXISTS `creditCard`;
+CREATE TABLE IF NOT EXISTS `creditCard` (
+  `ID` INT(8) ZEROFILL NOT NULL PRIMARY KEY auto_increment,
+  `cardNumber` INT(16) NOT NULL,
+  `confCode` INT (3) NOT NULL,
+  `monthvalid` INT(2) NOT NULL,
+  `yearvalid` INT (4) NOT NULL,
+  `pwd` varchar(15) NOT NULL,
+  `firstname` VARCHAR(40) NOT NULL,
+  `lastname` VARCHAR(11) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+INSERT INTO `creditCard` (`ID`, `cardNumber`, `confCode`, `monthvalid`, `yearvalid`, `pwd`, `firstname` , `lastname`) VALUES
+(NULL, '4004982711226988', '882', '01', '2018', 'england', 'king', 'arthur'),
+(NULL, '7229982715677261', '121', '10', '2020', 'hello', 'the', 'adele');
+
+--
+-- Estrutura da tabela `payPal`
+--
+DROP TABLE IF EXISTS `payPal`;
+CREATE TABLE IF NOT EXISTS `payPal` (
+  `ID` INT(8) ZEROFILL NOT NULL PRIMARY KEY auto_increment,
+  `email` varchar(40) NOT NULL,
+  `pwd` varchar(15) NOT NULL,
+  `firstname` VARCHAR(40) NOT NULL,
+  `lastname` VARCHAR(11) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+(NULL, 'kingarthur@uwl.ac.uk', 'england', 'king', 'arthur'),
+(NULL, 'adele@uwl.ac.uk', 'hello', 'the', 'adele');
+
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
