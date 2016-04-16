@@ -1,0 +1,50 @@
+<?php session_start(); //start the session first
+require_once("Connections/conn_payment.php");   //necessary mysql database connection
+?>
+<?php require_once('Connections/conn_loyalty.php'); ?>
+<?php require_once('Connections/conn_core_clients.php'); ?>
+
+
+-- 
+-- Estrutura da tabela `creditCard`
+--
+DROP TABLE IF EXISTS `creditCard`;
+CREATE TABLE IF NOT EXISTS `creditCard` (
+  `ID` INT(8) ZEROFILL NOT NULL PRIMARY KEY auto_increment,
+  `cardNumber` INT(16) NOT NULL,
+  `confCode` INT (3) NOT NULL,
+  `monthvalid` INT(2) NOT NULL,
+  `yearvalid` INT (4) NOT NULL,
+  `pwd` varchar(15) NOT NULL,
+  `credit_avaiable`  INT(5) NOT NULL,
+  `firstname` VARCHAR(40) NOT NULL,
+  `lastname` VARCHAR(11) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+INSERT INTO `creditCard` (`ID`, `cardNumber`, `confCode`, `monthvalid`, `yearvalid`, `pwd`, `credit_avaiable`, `firstname` , `lastname`) VALUES
+(1, '4004982711226988', '882', '01', '2018', '1001','200', 'arthur', 'smith'),
+(2, '7229982715677261', '121', '10', '2020', '2002', '25', 'john', 'lewis');
+(3, '7100099878188034', '121', '05', '2019', '3003', '1000', 'ellie', 'jones');
+
+--
+-- Estrutura da tabela `payPal`
+--
+DROP TABLE IF EXISTS `payPal`;
+CREATE TABLE IF NOT EXISTS `payPal` (
+  `ID` INT(8) ZEROFILL NOT NULL PRIMARY KEY auto_increment,
+  `email` varchar(40) NOT NULL,
+  `pwd` varchar(15) NOT NULL,
+  `pp_credit` INT (5) NOT NULL,
+  `firstname` VARCHAR(40) NOT NULL,
+  `lastname` VARCHAR(11) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+INSERT INTO `paypal` (`ID`, `email`, `pwd`, `pp_credit`, `firstname` , `lastname`) VALUES
+(1, 'arthur@uwl.ac.uk', 'arthur123', '200' 'arthur', 'smith'),
+(2, 'john@uwl.ac.uk', 'john123', '1000', 'john', 'lewis');
+(3, 'ellie@uwl.ac.uk', 'ellie123', '25', 'ellie', 'jones');
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
