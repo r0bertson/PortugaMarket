@@ -103,6 +103,9 @@ if (!isset($_SESSION["cart_storage"]) || count($_SESSION["cart_storage"]) < 1) {
 	$extrapoints = "<div style='font-size:18px; margin-top:12px;' align='right'>Points earned : ".$points_earned." LP</div>";
 }
 ?>
+
+
+
 <!-- 15/04  - THE CODE BELOW WILL UPDATE THE LOYALTY SCHEME DATABASES -->
 <?php 
 $username = $_SESSION['MM_Username'];
@@ -115,13 +118,33 @@ if(($lp_number != '')&&($lp_pwd != '')){
 $query = "SELECT * FROM clients WHERE email='$username' LIMIT 1";
 $result = mysql_query($query, $conn_core_clients) or die(mysql_error());
 $row_result = mysql_fetch_assoc($result);
-echo 'aehoooo' . $row_result['loyalnumber'];
 if($row_result['loyalnumber'] !=''){
 	$lnumber = $row_result['loyalnumber'];
 	//the client set the loyalnumber in members area, so any purchase will generate loyalty points
 	$query = "UPDATE loyaltyscheme.clients SET pontos = pontos + '$points_earned' WHERE ID='$lnumber'";
 	$result = mysql_query($query, $conn_loyalty) or die(mysql_error());
+	$today = date("m.d.y");    
+	//update history of points
+	$query2 = "INSERT INTO loyaltyscheme.history (ID, date, points) VALUES ('$lnumber','$today','$points_earned')";
+	$result = mysql_query($query2, $conn_loyalty) or die(mysql_error());
 }
+?>
+
+<!-- 
+16/04 - the following code will udpate the payment database
+
+-->
+<?php 
+$amount = $_SESSION['newTotal'];
+if(isset($_SESSION['cardNumber'])){
+	$card = $_SESSION['cardNumber'];	
+	$query = "UPDATE payment_db.creditcard SET credit_available = credit_available - '$amount' WHERE cardNumber='$card'";
+	$result = mysql_query($query, $conn_payment) or die(mysql_error());
+}
+else{
+	//do the paypal processing
+}
+
 ?>
   <!-- TODO 
         2 - UPDATE STOCK
