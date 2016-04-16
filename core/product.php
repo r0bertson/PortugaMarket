@@ -14,26 +14,29 @@
 	<?php include('header.php'); ?>
 
    <div id="main">
-    <div id="left">
-      <h1>PRODUCT</h1>
-      <p>HERE WILL BE THE PAGE OF THE PRODUCT</p>
-   	
-    <?php $idPassed = $_GET["id"];
+    <div id="left"> 
+	<?php $idPassed = $_GET["id"];
 	include("get_product.php"); ?>
+      <h1><?php echo $name ?></h1>
+  
+   	
+   
 <table width="100%" border="0" cellspacing="0" cellpadding="15">
   <tr>
-    <td width="19%" valign="top"><img src="product_images/<?php echo $id; ?>.jpg" width="142" height="188" alt="<?php echo $name; ?>" /><br />
-      <a href="product_images/<?php echo $id; ?>.jpg">View Full Size Image</a></td>
+    <td width="19%" valign="top"> <a href="product_images/<?php echo $id; ?>.jpg"><img src="product_images/<?php echo $id; ?>.jpg" width="200" height="300" alt="<?php echo $name; ?>" /><br />
+     </a></td>
     <td width="81%" valign="top"><h3><?php echo $name; ?></h3>
-      <p><?php echo "$".$price; ?><br />
+      <p>Unit price: <?php echo "&pound ".$price; ?><br />
         <br />
-        <?php echo "$nationality $category"; ?> <br />
-<br />
-        <?php echo $description; ?>
-<br />
+        <p> Nationality: <br /><?php echo "$nationality"; ?> <br />
+         <p> Category:<br /> <?php echo "$category"; ?> <br />
+         <p> Weight:<br /> <?php echo "$weight"; ?> <br />
+         <p> Special Offer:<br /> <?php echo "$specialoffer"; ?> <br />
+    	<p> Description: <br /> <?php echo "$description"; ?> <br /><br /><br />
+     
         </p>
       <form id="form1" name="form1" method="post" action="cart.php">
-        <input type="hidden" name="pid" id="pid" value="<?php echo $id; ?>" />
+        <input type="hidden" name="product_id" id="product_id" value="<?php echo $idPassed; ?>" />
         <input type="submit" name="button" id="button" value="Add to Shopping Cart" />
       </form>
       </td>

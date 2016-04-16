@@ -16,16 +16,16 @@
             	<li><a href="index.php">Home</a></li>
                 <li><a href="#">Shopping</a> 
                 	<ul>
-                		<li><a href="#">Fresh Food</a></li>
-                    	<li><a href="#">Drinks</a></li>
-                    	<li><a href="#">Clothing</a></li>
+                		<li><a href="category_page.php?page_category=freshfood">Fresh Food</a></li>
+                    	<li><a href="category_page.php?page_category=drinks">Drinks</a></li>
+                    	<li><a href="category_page.php?page_category=clothing">Clothing</a></li>
                 	</ul>
             	</li>
                 <li><a href="aboutUs.php">About Us</a></li>
-                <li><a href="#">Loyalty</a></li>
-            	
+                <li><a href="#">Loyalty Scheme</a></li>
+            	<li><a href="clientArea.php">Your Area</a></li>
             	<li><a href="logout.php">Logout</a></li>
-            	<li><a href="#">Cart</a></li>          
+            	<li><a href="cart.php">Cart</a></li>          
             </ul>
         </div>
 
@@ -36,17 +36,17 @@
             	<li><a href="index.php">Home</a></li>
                 <li><a href="#">Shopping </a>
                 	<ul>
-                		<li><a href="#">Fresh Food</a></li>
-                    	<li><a href="#">Drinks</a></li>
-                    	<li><a href="#">Clothing</a></li>
+                		<li><a href="category_page.php?page_category=freshfood">Fresh Food</a></li>
+                    	<li><a href="category_page.php?page_category=drinks">Drinks</a></li>
+                    	<li><a href="category_page.php?page_category=clothing">Clothing</a></li>
                 	</ul>
             	</li>
                 <li><a href="aboutUs.php">About Us</a></li>
-                <li><a href="#">Loyalty</a></li>
+                <li><a href="#">Loyalty Scheme</a></li>
             	
             	<li><a href="register.php">Register</a></li>
                 <li><a href="login.php">Login</a></li>
-            	<li><a href="#">Cart</a></li>
+            	<li><a href="cart.php">Cart</a></li>
            </ul>              
     </div>
     <?php } ?>

@@ -33,6 +33,39 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `lastname` VARCHAR(11) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+
+CREATE TABLE IF NOT EXISTS `history` (
+  `ID` INT(8)  NOT NULL PRIMARY KEY,
+  `date` date NOT NULL,
+  `points` varchar(40) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Table structure for table `creditCard`
+--
+CREATE TABLE IF NOT EXISTS `creditCard` (
+  `ID` INT(8) ZEROFILL NOT NULL PRIMARY KEY auto_increment,
+  `cardNumber` INT(16) NOT NULL,
+  `confCode` INT (3) NOT NULL,
+  `monthvalid` INT(2) NOT NULL,
+  `yearvalid` INT (4) NOT NULL,
+  `pwd` varchar(15) NOT NULL,
+  `firstname` VARCHAR(40) NOT NULL,
+  `lastname` VARCHAR(11) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+--
+-- Table structure for table `payPal`
+--
+CREATE TABLE IF NOT EXISTS `payPal` (
+  `ID` INT(8) ZEROFILL NOT NULL PRIMARY KEY auto_increment,
+  `email` varchar(40) NOT NULL,
+  `pwd` varchar(15) NOT NULL,
+  `firstname` VARCHAR(40) NOT NULL,
+  `lastname` VARCHAR(11) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 --
 -- Inserting initial data for table `clients`
 --
@@ -40,13 +73,20 @@ INSERT INTO `clients` (`ID`, `email`, `pwd`, `firstname`, `lastname`) VALUES
 (NULL, 'kingarthur@uwl.ac.uk', 'england', 'king', 'arthur'),
 (NULL, 'adele@uwl.ac.uk', 'hello', 'the', 'adele');
 
+--
+-- Inserting initial data for table `creditCard`
+--
+INSERT INTO `creditCard` (`ID`, `cardNumber`, `confCode`, `monthvalid`, `yearvalid`, `pwd`, `firstname` , `lastname`) VALUES
+(NULL, '4004982711226988', '882', '01', '2018', 'england', 'king', 'arthur'),
+(NULL, '7229982715677261', '121', '10', '2020', 'hello', 'the', 'adele');
 
+--
+-- Inserting initial data for table `payPal`
+--
+INSERT INTO `payPal` (`ID`, `email`, `pwd`, `firstname`, `lastname`) VALUES
+(NULL, 'kingarthur@uwl.ac.uk', 'england', 'king', 'arthur'),
+(NULL, 'adele@uwl.ac.uk', 'hello', 'the', 'adele');
 
-CREATE TABLE IF NOT EXISTS `history` (
-  `ID` INT(8)  NOT NULL PRIMARY KEY,
-  `date` date NOT NULL,
-  `points` varchar(40) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 
 
