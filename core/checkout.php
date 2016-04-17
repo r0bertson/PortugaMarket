@@ -158,8 +158,7 @@ if(isset($_SESSION['cardNumber'])){
 //Update the paypal account balance.
 else{
      $ppal = $_SESSION['email'];
-	 $pwdpal = $_SESSION['pp_pwd'];
-	 $query = "UPDATE payment_db.payPal SET pp_credit = pp_credit - '$amount' WHERE (email= '$ppal' AND pw_pwd='$pwdpal')"; 
+	 $query = "UPDATE payment_db.payPal SET pp_credit = pp_credit - '$amount' WHERE email= '$ppal'"; 
 	 
 	 //Update the stock
 	$i = 0; 
