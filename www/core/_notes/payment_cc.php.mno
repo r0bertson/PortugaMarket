@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_q_payment" value="name:cardnumber;datatype:string,name:name;datatype:string,name:expiration;datatype:int,name:security;datatype:string,name:credit_total;datatype:int,name:credit_available;datatype:int" />
+</info>
