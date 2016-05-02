@@ -1,0 +1,115 @@
+*{
+	margin: 0 auto;
+	padding-bottom: 0;
+
+}
+#navbar {
+	white-space: nowrap;
+	padding: 0px;
+	width: 1000px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	display: inline-block;
+}
+#navbar ul {/*
+	margin: 0px;
+	padding: 0px;*/
+	margin:0 auto;
+	align: center;
+	list-style-type: none;
+ 	width: 100%;
+	
+}
+#navbar ul li {
+	background-color: #473C8B;
+	float: left;
+	border: 1px solid #CCC;
+	position: relative;
+	list-style-type: none;
+}
+#navbar ul li a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+#navbar ul li a {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 30px;
+	color: #FFF;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	height: 30px;
+	width: 135px;
+}
+#navbar ul ul {
+	position: absolute;
+	visibility: hidden;
+	top: 31px;
+}
+#navbar ul li ul li a:hover {
+	background-color: #473C8B;
+}
+
+#navbar ul li:hover ul {
+	visibility: visible;
+}
+#navbar ul li:hover {
+	background-color: #473C8B;
+}
+#header {
+
+}
+#main a {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1em;
+	color: #333;
+}
+#main {
+	text-align: left;
+	display: block;
+}
+
+
+#footer {
+    bottom:0;
+    width:1000;
+	margin: 0;
+	
+}
+
+body {
+	margin: 0;
+	padding: 0px;
+	background-color: #CCC;
+	padding-bottom: 0;
+	text-align: center;
+}
+
+
+h1 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1.6em;
+	color: #333;
+}
+
+h2 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1em;
+	color: #333;
+}
+
+p , legend, li,td{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: .9em;
+	color: #333;
+}
+
+.instructions {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 0.8em;
+	color: #900;
+}
